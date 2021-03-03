@@ -6,7 +6,6 @@ var value = 0;
 var button1;
 var button2;
 var bg;
-var t;
 //var text = text("LIVE FEED Provided by the SubReddit AskOuija****", width/2, height - 800 );
 
 
@@ -20,13 +19,6 @@ function setup() {
   createCanvas(windowWidth / 1, windowHeight / 1.5);
   background(bg);
   createA("https://reddit.com/r/AskOuija", "LIVE FEED Provided by the SubReddit AskOuija****");
-  button1 = createButton("HELLO");
-  button1.position(width / 6, height / 1.5);
-  button1.mousePressed();
-
-  button2 = createButton("GOODBYE");
-  button2.position(width / 1.5, height / 1.5);
-
   question = 1 + int(random(35));
 }
 
@@ -35,9 +27,10 @@ function gotData(data) {
     for (var i = 0; i < data.data.children[i].data.title.length; i++) {
       strokeWeight(5);
       textSize(20);
-      fill(255);
+      fill(0);
       textAlign(CENTER);
       console.log(question);
+
       var t = data.data.children[question].data.title;
       text(t, width / 2, height / 2);
 
@@ -52,6 +45,7 @@ function gotData(data) {
 }
 
 function mousePressed() {
+
     if (value === 0) {
       value = 255;
     } else {
@@ -65,16 +59,16 @@ function mousePressed() {
 
       text(string[1], width / 2, height - 200);
     }
+
 }
 
 
 
 
 
+//what do i want the buttons to do??
+//hello - ask a new question
+//goodbye - give the answer??
 
-
-
-
-  //link to website
-  //arch answers
-  //make clear that it is a live feed
+//arch answers
+//need to link to portfolio
